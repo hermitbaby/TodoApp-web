@@ -1,0 +1,78 @@
+lchen@LAPTOP-S6S2GDJB MINGW64 /d/_projects/TodoApp (main)
+$ uvicorn main:app --reload
+INFO:     Will watch for changes in these directories: ['D:\\_projects\\TodoApp']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [27544] using StatReload
+INFO:     Started server process [28956]
+INFO:     Waiting for application startup.
+2024-09-17 18:04:53.754 | INFO     | main:startup_event:48 - Connect to MongoDB ✅
+INFO:     Application startup complete.
+INFO:     127.0.0.1:14151 - "GET /lists/66e6a949a6adb29da224a811/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14152 - "GET /lists/66e6a949a6adb29da224a811/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14231 - "OPTIONS /lists/66e6a949a6adb29da224a811/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14231 - "POST /lists/66e6a949a6adb29da224a811/items HTTP/1.1" 201 Created
+INFO:     127.0.0.1:14237 - "OPTIONS /lists/66e6a949a6adb29da224a811/items/state/done HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14237 - "PUT /lists/66e6a949a6adb29da224a811/items/state/done HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14284 - "OPTIONS /lists/66e6a949a6adb29da224a811/items/66e9590076b9173b90882f98 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14284 - "DELETE /lists/66e6a949a6adb29da224a811/items/66e9590076b9173b90882f98 HTTP/1.1" 204 No Content
+INFO:     127.0.0.1:14301 - "GET /lists/66e6a949a6adb29da224a811/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14302 - "GET /lists/66e6a949a6adb29da224a811/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14432 - "GET /lists/66e6a949a6adb29da224a811/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14433 - "GET /lists/66e6a949a6adb29da224a811/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14512 - "GET /lists/66e6a949a6adb29da224a811/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14513 - "GET /lists/66e6a949a6adb29da224a811/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14711 - "GET /lists/66e6a949a6adb29da224a811/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14712 - "GET /lists/66e6a949a6adb29da224a811/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14739 - "GET /lists/66e6a949a6adb29da224a811/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14740 - "GET /lists/66e6a949a6adb29da224a811/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14763 - "GET /lists/66e6a949a6adb29da224a811/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14764 - "GET /lists/66e6a949a6adb29da224a811/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14876 - "GET /lists/66e6a949a6adb29da224a811/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14877 - "GET /lists/66e6a949a6adb29da224a811/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14922 - "OPTIONS /lists/66e6a949a6adb29da224a811/items/66e7dd06358f5251856a4347 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14923 - "OPTIONS /lists/66e6a949a6adb29da224a811/items/66e7dd0a358f5251856a4348 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14924 - "OPTIONS /lists/66e6a949a6adb29da224a811/items/66e7dd0c358f5251856a4349 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14924 - "DELETE /lists/66e6a949a6adb29da224a811/items/66e7dd0a358f5251856a4348 HTTP/1.1" 204 No Content
+INFO:     127.0.0.1:14923 - "DELETE /lists/66e6a949a6adb29da224a811/items/66e7dd06358f5251856a4347 HTTP/1.1" 204 No Content
+INFO:     127.0.0.1:14922 - "DELETE /lists/66e6a949a6adb29da224a811/items/66e7dd0c358f5251856a4349 HTTP/1.1" 204 No Content
+INFO:     127.0.0.1:14942 - "OPTIONS /lists/66e6a949a6adb29da224a811/items/66e7dd10358f5251856a434a HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14943 - "OPTIONS /lists/66e6a949a6adb29da224a811/items/66e82fda358f5251856a434b HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14946 - "OPTIONS /lists/66e6a949a6adb29da224a811/items/66e833d2358f5251856a434e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14944 - "OPTIONS /lists/66e6a949a6adb29da224a811/items/66e830be358f5251856a434c HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14945 - "OPTIONS /lists/66e6a949a6adb29da224a811/items/66e83179358f5251856a434d HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14944 - "DELETE /lists/66e6a949a6adb29da224a811/items/66e833d2358f5251856a434e HTTP/1.1" 204 No Content
+INFO:     127.0.0.1:14942 - "DELETE /lists/66e6a949a6adb29da224a811/items/66e7dd10358f5251856a434a HTTP/1.1" 204 No Content
+INFO:     127.0.0.1:14946 - "DELETE /lists/66e6a949a6adb29da224a811/items/66e83179358f5251856a434d HTTP/1.1" 204 No Content
+INFO:     127.0.0.1:14943 - "DELETE /lists/66e6a949a6adb29da224a811/items/66e82fda358f5251856a434b HTTP/1.1" 204 No Content
+INFO:     127.0.0.1:14945 - "DELETE /lists/66e6a949a6adb29da224a811/items/66e830be358f5251856a434c HTTP/1.1" 204 No Content
+INFO:     127.0.0.1:14990 - "GET /lists/66e6a949a6adb29da224a811/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14991 - "GET /lists/66e6a949a6adb29da224a811/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:17474 - "OPTIONS /lists/66e6a949a6adb29da224a811/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:17474 - "POST /lists/66e6a949a6adb29da224a811/items HTTP/1.1" 201 Created
+INFO:     127.0.0.1:17607 - "POST /lists/66e6a949a6adb29da224a811/items HTTP/1.1" 201 Created
+INFO:     127.0.0.1:18128 - "POST /lists/66e6a949a6adb29da224a811/items HTTP/1.1" 201 Created
+INFO:     127.0.0.1:18668 - "OPTIONS /lists/66e6a949a6adb29da224a811/items/state/done HTTP/1.1" 200 OK
+INFO:     127.0.0.1:18668 - "PUT /lists/66e6a949a6adb29da224a811/items/state/done HTTP/1.1" 200 OK
+INFO:     127.0.0.1:18668 - "PUT /lists/66e6a949a6adb29da224a811/items/state/done HTTP/1.1" 200 OK
+INFO:     127.0.0.1:26075 - "OPTIONS /lists/66e6a949a6adb29da224a811/items/66e9632b76b9173b90882f9b HTTP/1.1" 200 OK
+INFO:     127.0.0.1:26075 - "DELETE /lists/66e6a949a6adb29da224a811/items/66e9632b76b9173b90882f9b HTTP/1.1" 204 No Content
+INFO:     127.0.0.1:26383 - "OPTIONS /lists/66e6a949a6adb29da224a811/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:26383 - "POST /lists/66e6a949a6adb29da224a811/items HTTP/1.1" 201 Created
+INFO:     127.0.0.1:26535 - "OPTIONS /lists/66e6a949a6adb29da224a811/items/66e9615276b9173b90882f9a HTTP/1.1" 200 OK
+INFO:     127.0.0.1:26536 - "OPTIONS /lists/66e6a949a6adb29da224a811/items/66e960de76b9173b90882f99 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:26536 - "DELETE /lists/66e6a949a6adb29da224a811/items/66e9615276b9173b90882f9a HTTP/1.1" 204 No Content
+INFO:     127.0.0.1:26535 - "DELETE /lists/66e6a949a6adb29da224a811/items/66e960de76b9173b90882f99 HTTP/1.1" 204 No Content
+INFO:     127.0.0.1:26669 - "OPTIONS /lists/66e6a949a6adb29da224a811/items/66e97e1976b9173b90882f9c HTTP/1.1" 200 OK
+INFO:     127.0.0.1:26669 - "DELETE /lists/66e6a949a6adb29da224a811/items/66e97e1976b9173b90882f9c HTTP/1.1" 204 No Content
+INFO:     127.0.0.1:26852 - "POST /lists/66e6a949a6adb29da224a811/items HTTP/1.1" 201 Created
+INFO:     127.0.0.1:26871 - "POST /lists/66e6a949a6adb29da224a811/items HTTP/1.1" 201 Created
+INFO:     127.0.0.1:26887 - "POST /lists/66e6a949a6adb29da224a811/items HTTP/1.1" 201 Created
+INFO:     127.0.0.1:26893 - "OPTIONS /lists/66e6a949a6adb29da224a811/items/state/done HTTP/1.1" 200 OK
+INFO:     127.0.0.1:26893 - "PUT /lists/66e6a949a6adb29da224a811/items/state/done HTTP/1.1" 200 OK
+INFO:     127.0.0.1:26893 - "PUT /lists/66e6a949a6adb29da224a811/items/state/done HTTP/1.1" 200 OK
+INFO:     127.0.0.1:26921 - "OPTIONS /lists/66e6a949a6adb29da224a811/items/66e97f9976b9173b90882f9e HTTP/1.1" 200 OK
+INFO:     127.0.0.1:26921 - "DELETE /lists/66e6a949a6adb29da224a811/items/66e97f9976b9173b90882f9e HTTP/1.1" 204 No Content
+INFO:     127.0.0.1:26929 - "OPTIONS /lists/66e6a949a6adb29da224a811/items/66e97f8876b9173b90882f9d HTTP/1.1" 200 OK
+INFO:     127.0.0.1:26929 - "DELETE /lists/66e6a949a6adb29da224a811/items/66e97f8876b9173b90882f9d HTTP/1.1" 204 No Content
+INFO:     127.0.0.1:26941 - "GET /lists/66e6a949a6adb29da224a811/items HTTP/1.1" 200 OK
+INFO:     127.0.0.1:26942 - "GET /lists/66e6a949a6adb29da224a811/items HTTP/1.1" 200 OK
