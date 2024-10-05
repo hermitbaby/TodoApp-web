@@ -80,12 +80,12 @@ Then add 4th todo item as Running state, and click "Clear Completed". Only runni
 
 ### 5. User can subscribe/follow others' todo list
 
-From the homepage, user can click `Subscribe` to subscibe others' todo list
+From the homepage, user can click `Subscribe` to subscribe others' todo list
 !["User can subscribe other's todo list"](assets/7-subscribe1.png)
 
 !["User can subscribe other's todo list2"](assets/7-subscribe2.png)
 
-Swith the view by click the checkbox `My Subscribed Todos` to show subscribed todo list item. For others' todo item, they cannot be modifed and in readonly mode.
+Switch the view by clicking the checkbox `My Subscribed Todos` to show subscribed todo list items. For others' todo items, they cannot be modifed and in readonly mode.
 
 !["User can view other's todo list"](assets/7-subscribe3.png)
 
