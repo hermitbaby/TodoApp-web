@@ -1,3 +1,6 @@
+export const GET_MY_FEED = 'GET_MY_FEED';
+export const GET_SUB_LISTS = 'GET_SUB_LISTS';
+export const STORE_SUB = 'STORE_SUB';
 export const GET_ITEMS = 'GET_ITEMS';
 export const ADD_ITEM = 'ADD_ITEM';
 export const DELETE_ITEM = 'DELETE_ITEM';

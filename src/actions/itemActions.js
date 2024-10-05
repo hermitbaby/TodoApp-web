@@ -1,12 +1,54 @@
 import axios from 'axios';
 
-import { GET_ITEMS, ADD_ITEM, DELETE_ITEM, ITEMS_LOADING, ITEMS_SELECT, UPDATE_ITEM } from './types';
+import { GET_MY_FEED, GET_SUB_LISTS, STORE_SUB, GET_ITEMS, ADD_ITEM, DELETE_ITEM, ITEMS_LOADING, ITEMS_SELECT, UPDATE_ITEM } from './types';
 // import { tokenConfig } from './authActions';
 import { returnErrors } from './errorActions';
 
 axios.defaults.baseURL = 'http://127.0.0.1:8000/';
 const todolist_id = "66e6a949a6adb29da224a811";
 
+
+const getMyFeed = () => (dispatch, getState) => {
+    dispatch(setItemsLoading());
+    axios
+        .get(`/subscriptions/items`)
+        .then(res => dispatch(
+                {
+                    type: GET_MY_FEED,
+                    payload: res.data,
+                }
+            )
+        )
+        .catch(err => dispatch(returnErrors(err.response.data, err.response.status)));
+};
+
+const getLists = () => (dispatch, getState) => {
+    dispatch(setItemsLoading());
+    axios
+        .get(`/lists/`)
+        .then(res => dispatch(
+                {
+                    type: GET_SUB_LISTS,
+                    payload: res.data,
+                }
+            )
+        )
+        .catch(err => dispatch(returnErrors(err.response.data, err.response.status)));
+};
+
+const storeSubscription = (sub) => (dispatch, getState) => {
+    dispatch(setItemsLoading());
+    axios
+        .post(`/subscriptions`, sub)
+        .then(res => dispatch(
+                {
+                    type: STORE_SUB,
+                    payload: res.data,
+                }
+            )
+        )
+        .catch(err => dispatch(returnErrors(err.response.data, err.response.status)));
+};
 
 const getItems = () => (dispatch, getState) => {
     dispatch(setItemsLoading());
@@ -75,6 +117,9 @@ const selectItem = (id) => {
 };
 
 export {
+    getMyFeed,
+    getLists,
+    storeSubscription,
     getItems,
     deleteItem,
     addItem,

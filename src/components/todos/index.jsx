@@ -1,13 +1,17 @@
 import React from "react";
 import { Modal, ModalHeader, ModalBody } from 'reactstrap';
+import { Form, FormGroup, Label, Input, Button } from 'reactstrap';
 
 import ListView from '../listview';
+import FeedListView from '../myfeed';
+
 import CreateTodoForm from '../create-todo-form';
+import SubscribeForm from '../subscribe-form';
 import Controller from '../controllers';
 
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { getItems, deleteItem, selectItem, updateItem } from '../../actions/itemActions';
+import { getMyFeed, getLists, getItems, deleteItem, selectItem, updateItem } from '../../actions/itemActions';
 
 class Todos extends React.Component {
   
@@ -19,6 +23,8 @@ class Todos extends React.Component {
 
   componentDidMount () {
       this.props.getItems();
+      this.props.getMyFeed();
+      this.props.getLists();
   }
 
   onDeleteClick = id => {
@@ -28,8 +34,10 @@ class Todos extends React.Component {
   state = {
     todos: [],
     isOpenTodoForm: false,
+    isOpenSubForm: false,
     searchTerm: '',
     view: 'list',
+    isFeed: false,
     filter: 'all'
   };
 
@@ -50,6 +58,18 @@ class Todos extends React.Component {
   toggleForm = () => {
     this.setState({
       isOpenTodoForm: !this.state.isOpenTodoForm
+    });
+  };
+
+  toggleSubForm = () => {
+    this.setState({
+      isOpenSubForm: !this.state.isOpenSubForm
+    });
+  };
+
+  toggleFeed = () => {
+    this.setState({
+      isFeed: !this.state.isFeed
     });
   };
 
@@ -111,8 +131,15 @@ class Todos extends React.Component {
     let todos = this.performSearch();
     // console.info(todos);
     todos = this.performFilter(todos);
+    const myfeed = this.props.item.feed;
 
-    return (
+    return (this.state.isFeed ? 
+      <FeedListView 
+        todos={myfeed}
+        toggleSelect={this.toggleSelect}
+        toggleComplete={this.toggleComplete}
+      />
+      : 
       <ListView 
         todos={todos}
         toggleSelect={this.toggleSelect}
@@ -125,11 +152,32 @@ class Todos extends React.Component {
     // const { items } = this.props.item;
         // console.info(this.props);
         // console.info(this.state);
+        console.info(this.props.item);
 
     return (
       <div>
         <h1 className="display-4 text-center mb-5">Todo App</h1>
         
+        
+        <div className="d-flex">
+            <Input type="switch" className="me-3" checked={this.state.isFeed}
+                   onClick={ () => {
+                      this.toggleFeed();
+                    }} 
+                   role="switch" />
+            <Label className="me-3" check>My Subscribed Todos</Label>
+            
+            <Button color="success" className="me-3" onClick={this.toggleSubForm}>
+              Subscribe
+            </Button>
+
+        </div> 
+
+          <FormGroup>
+            
+          </FormGroup>
+        
+
         <Controller 
           term={this.state.searchTerm}
           view={this.state.view}
@@ -143,15 +191,30 @@ class Todos extends React.Component {
         
         <div>{this.getView()}</div>
         
+        {/* create new todo item */}
         <Modal 
           isOpen={this.state.isOpenTodoForm} 
           toggle={this.toggleForm}
-        >
+          >
           <ModalHeader toggle={this.toggleForm}>
             Create a New Todo Item
           </ModalHeader>
           <ModalBody>
             <CreateTodoForm toggleForm={this.toggleForm} />
+          </ModalBody>
+        </Modal>
+
+                    
+        {/* subscribe form */}
+        <Modal 
+          isOpen={this.state.isOpenSubForm} 
+          toggle={this.toggleSubForm}
+          >
+          <ModalHeader toggle={this.toggleSubForm}>
+            Subscibe todo lists
+          </ModalHeader>
+          <ModalBody>
+            <SubscribeForm toggleForm={this.toggleSubForm} />
           </ModalBody>
         </Modal>
       </div>
@@ -171,6 +234,8 @@ export default connect(
       getItems,
       deleteItem,
       selectItem,
-      updateItem
+      updateItem,
+      getMyFeed,
+      getLists
   }
 )(Todos);
