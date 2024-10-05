@@ -78,6 +78,36 @@ Then add 4th todo item as Running state, and click "Clear Completed". Only runni
 
 !["Delete selected todo item"](assets/6-Delete_completed2.png)
 
+### 5. User can subscribe/follow others' todo list
+
+From the homepage, user can click `Subscribe` to subscibe others' todo list
+!["User can subscribe other's todo list"](assets/7-subscribe1.png)
+
+!["User can subscribe other's todo list2"](assets/7-subscribe2.png)
+
+Swith the view by click the checkbox `My Subscribed Todos` to show subscribed todo list item. For others' todo item, they cannot be modifed and in readonly mode.
+
+!["User can view other's todo list"](assets/7-subscribe3.png)
+
+This is the underlying DB record - jack subscribed two todolists from other users.
+!["Subscription relation in DB"](assets/7-subscribe4.png)
+
+Three new endpoints are added to support the subscription features in backend side.
+!["3 new endpoints"](assets/7-subscribe5.png)
+
+#### Feed implementation
+
+In general, the feed system has `Pull` and `Push` pattern.
+
+!["push vs pull"](assets/7-subscribe6.png)
+
+Usually, the Pull and Push Hybrid mode will be used in acutual product to optimize the sytem performance. 
+
+!["hybird mode"](assets/7-subscribe7.png)
+
+For simplicity, the feed feature in this project uses `Pull` pattern. When user view the Feed page, it will query all his/her subscribed todolist and display the todo items from them.
+
+
 ## Demo
 
 This is a recorded demo for above features:
